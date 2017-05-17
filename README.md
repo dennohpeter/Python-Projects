@@ -10,3 +10,6 @@ Place to put all my python projects that I will be doing as I learn/experiment w
 "For this assignment you will write a rudimentary text editor that allows the user to edit 5 lines of text, where each line is no longer than 80 characters. The editor should allow the user to continue editing as long as desired and should print the current state of the edit buffer after each edit.
 The editor is a 'line editor' in that the user must edit one line at a time.  The user can specify which line should be edited by choosing a line number from a menu.   
 The only two editing operations possible are to replace an entire line with a new line, or to replace a substring in the line with a new substring."
+
+## tweet_weather.py
+-Takes weather data of Mississauga, ON and tweets the sky status, wind, humidity, and current temperature every hour.
