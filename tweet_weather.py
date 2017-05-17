@@ -31,20 +31,20 @@ def tweetWeather():
 
 # The consumer keys can be found on your application's Details
 # page located at https://dev.twitter.com/apps (under "OAuth settings")
-consumer_key="CU7WQWPVfgrPR8KXUH7Gv5ZP9"
-consumer_secret="7wD9ZEoJVVmbsvN8GfKpSf79yS6VFIETm9rKe9EP4gdIfG0rV9"
+consumer_key="CU7WQWPVfgrPR8KXUH7GXXXXX"
+consumer_secret="7wD9ZEoJVVmbsvN8GfXXXX79yS6VFIETm9rKe9EP4gdIfG0rV9"
 
 # The access tokens can be found on your applications's Details
 # page located at https://dev.twitter.com/apps (located
 # under "Your access token")
-access_token="813887388938338304-Wc1FCeP0wTg5YsoO0GlK5r1HV60YSzk"
-access_token_secret="MtcLIdi4XVL22nvXXd2EbWIgRBMnv55c53VDfQLLfpdkJ"
+access_token="813887388938338304-WcXXXXP0wTg5YsoO0GlK5r1HV60YSzk"
+access_token_secret="MtcLIdi4XVL22nvXXd2EbWIgRBMnv5XXXXVDfQLLfpdkJ"
 
 auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
 auth.set_access_token(access_token, access_token_secret)
 
 #My API key for the weather
-API_key = 'dc41de15402a02c510319c594b612419'
+API_key = 'dc41de15402a02c510319c594b61XXXX'
 owm = pyowm.OWM(API_key)
 api = tweepy.API(auth)
 
