@@ -67,3 +67,57 @@ while True:
 				changeto = 'DOWN'
 			if event.key == pygame.K_ESCAPE: 
 				pygame.event.post(pygame.event.Event(QUIT))
+
+	# validation of direction :-) 
+	if changeto == 'RIGHT' and not direction == 'LEFT':
+		direction = 'RIGHT'
+	if changeto == 'LEFT' and not direction == 'RIGHT':
+		direction = 'LEFT'
+	if changeto == 'UP' and not direction == 'DOWN':
+		direction = 'UP'
+	if changeto == 'DOWN' and not direction == 'UP':
+		direction = 'DOWN'	
+
+	if direction == 'RIGHT':
+		#[x,y]
+		snakePos[0] += 10
+	if direction == 'LEFT':
+		snakePos[0] -= 10
+	if direction == 'UP':
+		snakePos[1] -= 10
+	if direction == 'DOWN':
+		snakePos[1] += 10
+
+	# Snake body mechanism
+	snakeBody.insert(0, list(snakePos))
+	if snakePos[0] == foodPos[0] and snakePos[1] == foodPos[1]:
+		foodSpawn = False
+	else: 
+		snakeBody.pop() 
+
+	if foodSpawn == False: #spawns a new food randomly 
+	 	foodPos = [random.randrange(1,72) * 10,random.randrange(1,46) * 10]
+	
+	foodSpawn = True
+	playSurface.fill(white) #This is the part where we actually draw things on our canvas
+
+	for pos in snakeBody:
+		#This is to draw our smol snek
+		pygame.draw.rect(playSurface, green, pygame.Rect(pos[0], pos[1], 10, 10))
+
+	pygame.draw.rect(playSurface, brown, 
+	pygame.Rect(foodPos[0], foodPos[1], 10, 10))
+
+	#checking for the boundaries! 
+	if snakePos[0] > 710 or snakePos[0] < 0:
+		gameOver()
+	if snakePos[1] > 450 or snakePos[1] < 0:
+		gameOver()
+
+	# when head hits body! 
+	for block in snakeBody[1:]:
+		if snakePos[0] == block[0] and snakePos[1] == block[1]:
+			gameOver()
+
+	pygame.display.flip()
+	fpsController.tick(25)
