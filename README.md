@@ -13,3 +13,6 @@ The only two editing operations possible are to replace an entire line with a ne
 
 ## tweet_weather.py
 -Takes weather data of Mississauga, ON using the pyOWN module and tweets the sky status, wind, humidity, and current temperature every hour using the tweepy module.
+
+## snakeGame.py
+-Snake game created using the pygame module! 
