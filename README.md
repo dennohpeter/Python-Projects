@@ -16,3 +16,9 @@ The only two editing operations possible are to replace an entire line with a ne
 
 ## snakeGame.py
 -Snake game created using the pygame module! 
+
+## Tweet_Analyzer.py
+- Analyzes tweets that are tweeted at @bot_dema
+
+## PasswordVault.py
+- Password vault that encrypts passwords!
