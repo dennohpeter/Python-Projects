@@ -1,5 +1,6 @@
 import tweepy
 import json
+import random
 
 #Function that opens a file and stores the data into the file!
 # def store_tweets(file, tweets):
@@ -17,7 +18,7 @@ auth.set_access_token(access_token, access_token_secret)
 api = tweepy.API(auth)
 
 tweets = []
-# pos_emojis = ['😙','❤','😍','💓','😗','☺','😊','😛','💕','😀','😃','😚']
+pos_emojis = ['😙','❤','😍','💓','😗','☺','😊','😛','💕','😀','😃','😚']
 # neg_emojis = ['☹','😕','😩','😒','😠','😐','😦','😣','😫','😖','😞','💔','😢','😟']
 
 #all_emojis = pos_emojis + neg_emojis
@@ -26,15 +27,20 @@ tweets = []
 class MyStreamListener(tweepy.StreamListener):
 
     def on_status(self, status):
+
+        print('Username: ' + status.user.screen_name)
+        print('Tweet: ' + status.text)
+        tweet = '@'  + status.user.screen_name + random.choice(pos_emojis)
+        api.update_status(tweet)
         tweets.append(status.text.rstrip())
-        if len(tweets) > 200:
-            myStream.disconnect()
+        # if len(tweets) > 200:
+        #     myStream.disconnect()
 
 
 MyStreamListener = MyStreamListener()
 myStream = tweepy.Stream(auth = api.auth, listener = MyStreamListener)
 
-myStream.filter(track=["black panther"], languages=['en'])
+myStream.filter(track=['@bot_dema'])
 
 for x in tweets:
     print(x)
