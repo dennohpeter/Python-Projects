@@ -1,4 +1,3 @@
-
 #Battleship - Created by Dema Abu Adas, April 25th
 #!/usr/bin/python
 from random import randint
@@ -11,7 +10,7 @@ def new():
     global ship_col
     ship_col = randint(0,4)
     print("NEW:",ship_row,ship_col)
-    
+
     return ship_row, ship_col
 #Function to reset matrix and generate new point
 def reset():
@@ -45,7 +44,7 @@ menubar = MenuBar(app, toplevel=["Options"], options=[
 p = Text(app, text="Matrix to view:")
 my_waffle = Waffle(app, height=5, width=5, pad=1, dim=40, remember=True)
 
-#Maybe keep maybe delete! 
+#Maybe keep maybe delete!
 #new_game = PushButton(app, command=reset, text="New Game", grid=[0,1])
 
 #Counter:
